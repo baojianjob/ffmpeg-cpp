@@ -2,7 +2,7 @@
 
 #include "ffmpeg.h"
 #include "InputStream.h"
-#include "Frame Sinks/AudioFrameSink.h"
+#include "FrameSinks/AudioFrameSink.h"
 
 namespace ffmpegcpp
 {

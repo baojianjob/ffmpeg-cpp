@@ -42,7 +42,7 @@
     <ClInclude Include="Codecs\VP9Codec.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\FrameSink.h">
+    <ClInclude Include="FrameSinks\FrameSink.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Codecs\VideoCodec.h">
@@ -60,16 +60,16 @@
     <ClInclude Include="Codecs\AudioCodec.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\AudioEncoder.h">
+    <ClInclude Include="FrameSinks\AudioEncoder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\AudioFrameSink.h">
+    <ClInclude Include="FrameSinks\AudioFrameSink.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\VideoFrameSink.h">
+    <ClInclude Include="FrameSinks\VideoFrameSink.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\VideoEncoder.h">
+    <ClInclude Include="FrameSinks\VideoEncoder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AudioFormatConverter.h">
@@ -123,16 +123,16 @@
     <ClInclude Include="Sources\EncodedFileSource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\FrameSinkStream.h">
+    <ClInclude Include="FrameSinks\FrameSinkStream.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\FrameWriter.h">
+    <ClInclude Include="FrameSinks\FrameWriter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\OneInputFrameSink.h">
+    <ClInclude Include="FrameSinks\OneInputFrameSink.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\VideoFilterInput.h">
+    <ClInclude Include="FrameSinks\VideoFilterInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FrameContainer.h">
@@ -147,10 +147,10 @@
     <ClInclude Include="Info\VideoStreamInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\Filter.h">
+    <ClInclude Include="FrameSinks\Filter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Frame Sinks\AudioFilter.h">
+    <ClInclude Include="FrameSinks\AudioFilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Info\AudioStreamInfo.h">
@@ -191,10 +191,10 @@
     <ClCompile Include="Codecs\AudioCodec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Frame Sinks\AudioEncoder.cpp">
+    <ClCompile Include="FrameSinks\AudioEncoder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Frame Sinks\VideoEncoder.cpp">
+    <ClCompile Include="FrameSinks\VideoEncoder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AudioFormatConverter.cpp">
@@ -242,13 +242,13 @@
     <ClCompile Include="Sources\EncodedFileSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Frame Sinks\FrameSinkStream.cpp">
+    <ClCompile Include="FrameSinks\FrameSinkStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Frame Sinks\OneInputFrameSink.cpp">
+    <ClCompile Include="FrameSinks\OneInputFrameSink.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Frame Sinks\VideoFilterInput.cpp">
+    <ClCompile Include="FrameSinks\VideoFilterInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FrameContainer.cpp">
@@ -257,10 +257,10 @@
     <ClCompile Include="Demuxing\StreamData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Frame Sinks\Filter.cpp">
+    <ClCompile Include="FrameSinks\Filter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Frame Sinks\AudioFilter.cpp">
+    <ClCompile Include="FrameSinks\AudioFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
