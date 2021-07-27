@@ -8,16 +8,17 @@ using namespace ffmpegcpp;
 
 int main()
 {
-	// This example will take a raw audio file and encode it into as MP3.
+	// This example will take a raw audio file and encode it into as AAC.
 	try
 	{
-		// Create a muxer that will output as MP3.
-		Muxer* muxer = new Muxer("output.mp3");
+		// Create a muxer that will output as AAC.
+		// Muxer* muxer = new Muxer("output.aac");
+		Muxer* muxer = new Muxer("output.flv");
 
-		// Create a MP3 codec that will encode the raw data.
-		AudioCodec* codec = new AudioCodec(AV_CODEC_ID_MP3);
+		// Create a AAC codec that will encode the raw data.
+		AudioCodec* codec = new AudioCodec(AV_CODEC_ID_AAC);
 
-		// Create an encoder that will encode the raw audio data as MP3.
+		// Create an encoder that will encode the raw audio data as AAC.
 		// Tie it to the muxer so it will be written to the file.
 		AudioEncoder* encoder = new AudioEncoder(codec, muxer);
 

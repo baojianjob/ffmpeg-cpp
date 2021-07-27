@@ -12,7 +12,8 @@ namespace ffmpegcpp {
 	{
 	public:
 
-		Muxer(const char* fileName);
+		// formatName: eg "mp4"
+		Muxer(const char* fileName, const char* formatName = NULL);
 		~Muxer();
 
 		void AddOutputStream(OutputStream* stream);

@@ -10,17 +10,12 @@ using namespace std;
 namespace ffmpegcpp
 {
 
-	Muxer::Muxer(const char* fileName)
+	Muxer::Muxer(const char* fileName, const char* formatName)
 	{
 		this->fileName = fileName;
 
 		/* allocate the output media context */
-		avformat_alloc_output_context2(&containerContext, NULL, NULL, fileName);
-		if (!containerContext)
-		{
-			printf("WARNING: Could not deduce output format from file extension: using MP4. as default\n");
-			avformat_alloc_output_context2(&containerContext, NULL, "mp4", fileName);
-		}
+		avformat_alloc_output_context2(&containerContext, NULL, formatName, fileName);
 		if (!containerContext)
 		{
 			throw FFmpegException("Could not allocate container context for " + this->fileName);
@@ -204,8 +199,14 @@ namespace ffmpegcpp
 			}
 		}
 
+
+		AVDictionary * opts = nullptr;
+		if(strcmp(containerContext->oformat->name, "flv") == 0)
+			av_dict_set(&opts, "flvflags", "no_duration_filesize", 0);
+
 		// Write the stream header, if any.
-		int ret = avformat_write_header(containerContext, NULL);
+		int ret = avformat_write_header(containerContext, opts ? &opts : NULL);
+
 		if (ret < 0)
 		{
 			throw FFmpegException("Error when writing header to output file " + fileName, ret);
