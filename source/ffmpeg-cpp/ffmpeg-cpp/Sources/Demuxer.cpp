@@ -51,6 +51,51 @@ namespace ffmpegcpp
 		pkt->size = 0;
 	}
 
+	Demuxer::Demuxer(AVIOContext *avioContext, AVInputFormat* inputFormat, AVDictionary *format_opts)
+	{
+		//this->fileName = fileName;
+		containerContext = avformat_alloc_context();
+		if(containerContext == NULL)
+		{
+			CleanUp();
+			throw FFmpegException("Failed to alloc input container ", -1);
+		}
+
+		containerContext->pb = avioContext;
+
+		// open input file, and allocate format context
+		int ret;
+		if ((ret = avformat_open_input(&containerContext, NULL, inputFormat, &format_opts)) < 0)
+		{
+			CleanUp();
+			throw FFmpegException("Failed to open input container " + string(fileName), ret);
+		}
+
+		// retrieve stream information
+		if (ret = (avformat_find_stream_info(containerContext, NULL)) < 0)
+		{
+			CleanUp();
+			throw FFmpegException("Failed to read streams from " + string(fileName), ret);
+		}
+
+		inputStreams = new InputStream*[containerContext->nb_streams];
+		for (int i = 0; i < containerContext->nb_streams; ++i)
+		{
+			inputStreams[i] = nullptr;
+		}
+
+		// initialize packet, set data to NULL, let the demuxer fill it
+		pkt = av_packet_alloc();
+		if (!pkt)
+		{
+			CleanUp();
+			throw FFmpegException("Failed to create packet for input stream");
+		}
+		av_init_packet(pkt);
+		pkt->data = NULL;
+		pkt->size = 0;
+	}
+
 	Demuxer::~Demuxer()
 	{
 		CleanUp();
